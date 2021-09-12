@@ -3,25 +3,21 @@ public class Main
 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a number to check weather it's palindrome or not : ");
 		int number = input.nextInt();
-	    isPalindrome(number);
+	    System.out.println(palindrome(number));
 		
 	}
 	
-	public static void isPalindrome(int n){
-	    int reverseNum=0;
-	    int y=n;
+	public static int palindrome(int n){
+	    int number = n, sum=0;
 	    while(n!=0){
-	        int r=n%10;
+	        sum=(sum*10)+(n%10);
 	        n=n/10;
-	        reverseNum=(reverseNum*10)+r;
-	        
 	    }
 	    
-	    if(y==reverseNum)
-	        System.out.println("isPalindrome");
-	   else
-	    System.out.println("Not");
-	    
+	    if(sum==number) return 1;
+	    return 0;
 	}
+	
 }
